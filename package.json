@@ -1,7 +1,11 @@
 {
   "name": "@bmacher/eslint-config-typescript",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ESLint config based on AirBnB for TypeScript & CDK.",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
   "main": "index.js",
   "files": [
     "index.js",
