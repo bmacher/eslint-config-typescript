@@ -1,3 +1,6 @@
+[![npm version](https://img.shields.io/npm/v/@bmacher/eslint-config-typescript)](https://www.npmjs.com/package/@bmacher/eslint-config-typescript/v/latest)
+[![GitHub license](https://img.shields.io/github/license/bmacher/eslint-config-typescript.svg)](https://github.com/bmacher/eslint-config-typescript/blob/master/LICENSE)
+
 # ESLint Config Typescript
 
 > ESLint config  based on [AirBnB](https://github.com/airbnb/javascript) for TypeScript & CDK.
