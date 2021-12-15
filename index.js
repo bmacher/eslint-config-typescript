@@ -38,8 +38,6 @@ module.exports = {
   },
 
   rules: {
-    // Default exports can lead to different names in import
-    // whereas import with destructuring not.
     'import/prefer-default-export': 'off',
     'max-params': ["error", 3],
     'no-console': 'off',
@@ -47,14 +45,14 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
-        'multiline': {
-          'delimiter': 'semi',
-          'requireLast': true
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true,
         },
-        'singleline': {
-          'delimiter': 'semi',
-          'requireLast': true
-        }
+        singleline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
       },
     ],
 
@@ -70,11 +68,11 @@ module.exports = {
       },
       {
         selector: 'class',
-        format: ['PascalCase']
+        format: ['PascalCase'],
       },
       {
         selector: 'enum',
-        format: ['PascalCase']
+        format: ['PascalCase'],
       },
       {
         selector: 'variable',
@@ -84,15 +82,15 @@ module.exports = {
       },
       {
         selector: 'function',
-        format: ['camelCase']
+        format: ['camelCase'],
       },
       {
         selector: 'classProperty',
-        format: ['camelCase']
+        format: ['camelCase'],
       },
       {
         selector: 'objectLiteralProperty',
-        format: ['camelCase']
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
       },
     ],
   },
@@ -105,9 +103,9 @@ module.exports = {
       },
     },
     {
-      files: '**/?(*\.)+(spec|test).ts',
+      files: '**/*.(spec|test).ts',
       rules: {
-        // To import dev dependencies in tests
+        // To import dev dependencies in tests (e.g. @jest/globals)
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
       },
     },

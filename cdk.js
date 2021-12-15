@@ -4,13 +4,13 @@ module.exports = {
   ],
   
   rules: {
-    "no-new": "off",
+    'no-new': 'off',
 
     '@typescript-eslint/naming-convention': [
       'error',
       {
         selector: 'objectLiteralProperty',
-        format: ['camelCase', 'UPPER_CASE', 'PascalCase']
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
       },
     ],
   },
