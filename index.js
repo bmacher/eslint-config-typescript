@@ -39,7 +39,7 @@ module.exports = {
 
   rules: {
     'import/prefer-default-export': 'off',
-    'max-params': ["error", 3],
+    'max-params': ['error', 3],
     'no-console': 'off',
 
     '@typescript-eslint/member-delimiter-style': [
