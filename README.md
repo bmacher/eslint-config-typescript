@@ -14,7 +14,7 @@
   - [max-params](#max-params)
   - [no-console](#no-console)
   - [@typescript-eslint/member-delimiter-style](#typescript-eslintmember-delimiter-style)
-  - @typescript-eslint/naming-convention
+  - [@typescript-eslint/naming-convention](#typescript-eslintnaming-convention)
     - [Interface](#interface)
     - [Class](#class)
     - [Enum](#enum)
@@ -24,7 +24,7 @@
     - [ObjectLiteralProperty](#objectliteralproperty)
 - [CDK Rules](#cdk-rules)
   - [no-new](#no-new)
-  - @typescript-eslint/naming-convention
+  - [@typescript-eslint/naming-convention](#typescript-eslintnaming-convention-1)
     - [ObjectLiteralProperty](#objectliteralproperty-1)
 - [Overrides](#overrides)
   - [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
