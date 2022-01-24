@@ -105,7 +105,7 @@ bar();
 
 Functions with too many parameters either do too much or introduce too many variables.
 
-Value: `["error", 3]`
+Value: `['error', 3]`
 
 👎 Don't
 
