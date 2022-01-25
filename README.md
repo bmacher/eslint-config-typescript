@@ -7,35 +7,36 @@
 
 ## Table of contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Default Rules](#default-rules)
-  - [import/prefer-default-export](#importprefer-default-export)
-  - [max-params](#max-params)
-  - [no-console](#no-console)
-  - [@typescript-eslint/member-delimiter-style](#typescript-eslintmember-delimiter-style)
-  - [@typescript-eslint/naming-convention](#typescript-eslintnaming-convention)
-    - [Interface](#interface)
-    - [Class](#class)
-    - [Enum](#enum)
-    - [Variable](#variable)
-    - [Function](#function)
-    - [ClassProperty](#classproperty)
-    - [ObjectLiteralProperty](#objectliteralproperty)
-- [CDK Rules](#cdk-rules)
-  - [no-new](#no-new)
-  - [@typescript-eslint/naming-convention](#typescript-eslintnaming-convention-1)
-    - [ObjectLiteralProperty](#objectliteralproperty-1)
-- [Overrides](#overrides)
-  - [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Default Rules](#default-rules)
+    - [import/prefer-default-export](#importprefer-default-export)
+    - [max-params](#max-params)
+    - [no-console](#no-console)
+    - [@typescript-eslint/member-delimiter-style](#typescript-eslintmember-delimiter-style)
+    - [@typescript-eslint/naming-convention](#typescript-eslintnaming-convention)
+      - [Interface](#interface)
+      - [Class](#class)
+      - [Enum](#enum)
+      - [Variable](#variable)
+      - [Function](#function)
+      - [ClassProperty](#classproperty)
+      - [ObjectLiteralProperty](#objectliteralproperty)
+  - [CDK Rules](#cdk-rules)
+    - [no-new](#no-new)
+    - [@typescript-eslint/naming-convention](#typescript-eslintnaming-convention-1)
+      - [ObjectLiteralProperty](#objectliteralproperty-1)
+  - [Rules only](#rules-only)
+  - [Overrides](#overrides)
+    - [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
 
 ## Installation 
 
 ```sh
-yarn add --dev @bmacher/eslint-config-typescript
+yarn add --dev @sdc-production/eslint-config-typescript
 
 # Or with npm
-npm install --save-dev @bmacher/eslint-config-typescript
+npm install --save-dev @sdc-production/eslint-config-typescript
 ```
 
 ## Usage
@@ -47,14 +48,16 @@ module.exports = {
     project: './tsconfig.json'
   },
   extends: [
-    "@bmacher/eslint-config-typescript",
+    "@sdc-production/eslint-config-typescript",
     // Use this in CDK projects instead
-    "@bmacher/eslint-config-typescript/cdk",
+    "@sdc-production/eslint-config-typescript/cdk",
+    // Use this if you only need the rules and overrides.
+    "@sdc-production/eslint-config-typescript/rules-only",
   ],
 }
 ```
 
-The short version `@bmacher/typescript` does also work. However, that is [not recommended by ESLint](https://eslint.org/docs/developer-guide/shareable-configs#npm-scoped-modules), as it can lead to name clashes.
+The short version `@sdc-production/typescript` does also work. However, that is [not recommended by ESLint](https://eslint.org/docs/developer-guide/shareable-configs#npm-scoped-modules), as it can lead to name clashes.
 
 ## Default Rules
 
@@ -160,7 +163,6 @@ Value: `PascalCase`
 #### *Enum*
 
 Value: `PascalCase`
-
 #### *Variable*
 
 Value: `camelCase, UPPER_CASE`
@@ -199,8 +201,12 @@ Environments of Lambdas (and any other place) should be UPPER_CASE and propertie
 
 Value: `camelCase, UPPER_CASE, PascalCase`
 
+## Rules only
+
+Only provides the `rules` and `overrides` from the base config and no other configuration. This can be used when the e.g. the parser is configured elsewhere but you still want to have the rules.
+
 ## Overrides
 
 ### [import/no-extraneous-dependencies](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md)
 
-This rule is disabled in `scripts/**/*.js` and tests, because they are not part of the application/project but could need dedicated imports themselves (like `shelljs` or `axios` in tests) which should to be under `devDependencies`.
+Provides only the `Rules` and `Overrides` from the base configuration and no other configuration. This can be used if e.g. the parser is configured elsewhere but you still want to have the rules. Common use case would be inside frontend configurations like in Vue.

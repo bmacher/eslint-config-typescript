@@ -12,7 +12,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "cdk.js"
+    "cdk.js",
+    "rules-only.js"
   ],
   "repository": "https://github.com/bmacher/eslint-config-typescript.git",
   "author": "Benjamin Macher",
